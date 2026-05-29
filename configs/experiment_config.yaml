@@ -1,0 +1,58 @@
+# experiment_config.yaml
+# Configuration for alignment distillation experiments (Month 1)
+
+experiment:
+  name: "alignment_distillation_v1"
+  seed: 42
+
+teacher:
+  model_name: "meta-llama/Meta-Llama-3-8B-Instruct"
+  load_in_4bit: true
+  max_new_tokens: 512
+
+student:
+  model_name: "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+  max_length: 512
+
+# Approach A: LoRA + KL Distillation (primary)
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules: ["q_proj", "v_proj", "k_proj", "o_proj"]
+
+distillation:
+  alpha: 0.5          # KL loss weight
+  beta: 0.5           # CE loss weight
+  temperature: 4.0    # Soft-target temperature
+  learning_rate: 2.0e-4
+  num_epochs: 3
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  use_lora: true
+  use_response_distillation: true
+  use_direct_finetuning: false
+  output_dir: "outputs/student_lora"
+
+# Approach B: Direct fine-tuning (baseline)
+baseline:
+  use_lora: false
+  use_direct_finetuning: true
+  use_response_distillation: false
+  output_dir: "outputs/student_baseline"
+
+datasets:
+  train:
+    - alpaca
+    - flan_sample
+    - multilingual
+  eval:
+    - truthfulqa
+    - xquad
+  languages: ["en", "hi", "de", "fr", "zh"]
+  max_samples_per_dataset: 5000
+
+evaluation:
+  consistency_runs: 3
+  hallucination_threshold: 0.4
+  output_dir: "outputs/evaluation"

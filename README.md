@@ -1,7 +1,5 @@
 # Alignment Distillation and Trustworthiness Evaluation in Small Language Models
 
-**Internship Project — Carnot Research Pvt Ltd**
-**Intern:** Venkata Mahesh | **Supervisor:** Dr. Kanica
 
 ## Objective
 Study whether trustworthy behavior and alignment from larger language models can be transferred to smaller models using distillation and adapter-based fine-tuning techniques.

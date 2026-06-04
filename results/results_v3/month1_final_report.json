@@ -1,0 +1,99 @@
+{
+  "experiment": "Month 1 Clean Runner",
+  "date": "2026-06-03",
+  "teacher_model": "Qwen/Qwen2.5-3B-Instruct",
+  "student_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "training_samples": 363,
+  "results": {
+    "base_student": {
+      "train": {
+        "label": "Base Student - Training Questions",
+        "avg_rouge_l": 0.258,
+        "avg_hallucin": 0.181,
+        "avg_factuality": 0.648,
+        "avg_instruction_following": 0.879
+      },
+      "held_out": {
+        "label": "Base Student - Held Out Questions",
+        "avg_rouge_l": 0.392,
+        "avg_hallucin": 0.2,
+        "avg_factuality": 0.761,
+        "avg_instruction_following": 0.935
+      }
+    },
+    "lora_sft": {
+      "train": {
+        "label": "LoRA SFT - Training Questions",
+        "avg_rouge_l": 0.384,
+        "avg_hallucin": 0.131,
+        "avg_factuality": 0.584,
+        "avg_instruction_following": 0.851
+      },
+      "held_out": {
+        "label": "LoRA SFT - Held Out Questions",
+        "avg_rouge_l": 0.444,
+        "avg_hallucin": 0.15,
+        "avg_factuality": 0.722,
+        "avg_instruction_following": 0.881
+      }
+    },
+    "response_distillation": {
+      "train": {
+        "label": "Response Distillation - Training Questions",
+        "avg_rouge_l": 0.28,
+        "avg_hallucin": 0.175,
+        "avg_factuality": 0.744,
+        "avg_instruction_following": 0.941
+      },
+      "held_out": {
+        "label": "Response Distillation - Held Out Questions",
+        "avg_rouge_l": 0.35,
+        "avg_hallucin": 0.223,
+        "avg_factuality": 0.865,
+        "avg_instruction_following": 0.962
+      }
+    }
+  },
+  "consistency": {
+    "base_student": {
+      "avg_consistency": 0.585
+    },
+    "lora_sft": {
+      "avg_consistency": 0.312
+    },
+    "response_distillation": {
+      "avg_consistency": 0.344
+    }
+  },
+  "multilingual": {
+    "base_student": {
+      "avg_rouge_l": 0.244,
+      "avg_factuality": 0.458,
+      "avg_hallucination": 0.06
+    },
+    "lora_sft": {
+      "avg_rouge_l": 0.1,
+      "avg_factuality": 0.2,
+      "avg_hallucination": 0.065
+    },
+    "response_distillation": {
+      "avg_rouge_l": 0.018,
+      "avg_factuality": 0.2,
+      "avg_hallucination": 0.209
+    }
+  },
+  "explicit_benchmarks": {
+    "base_student": {
+      "factual_accuracy": 0.5,
+      "explicit_hallucination_rate": 1.0
+    },
+    "lora_sft": {
+      "factual_accuracy": 0.375,
+      "explicit_hallucination_rate": 1.0
+    },
+    "response_distillation": {
+      "factual_accuracy": 0.625,
+      "explicit_hallucination_rate": 0.333
+    }
+  }
+}

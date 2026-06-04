@@ -1,0 +1,9 @@
+approach,split,rouge_l,factuality_proxy,hallucination_proxy,instruction_following,explicit_factual_accuracy,explicit_hallucination_rate
+Base Student,train,0.258,0.648,0.181,0.879,0.5,1.0
+Base Student,held_out,0.392,0.761,0.2,0.935,0.5,1.0
+Direct SFT,train,0.379,0.69,0.205,0.863,0.5,0.667
+Direct SFT,held_out,0.371,0.556,0.155,0.733,0.5,0.667
+LoRA SFT,train,0.384,0.584,0.131,0.851,0.375,1.0
+LoRA SFT,held_out,0.444,0.722,0.15,0.881,0.375,1.0
+Response Distillation,train,0.28,0.744,0.175,0.941,0.625,0.333
+Response Distillation,held_out,0.35,0.865,0.223,0.962,0.625,0.333

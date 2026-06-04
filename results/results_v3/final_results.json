@@ -1,0 +1,90 @@
+{
+  "base_student": {
+    "train": {
+      "label": "Base Student - Training Questions",
+      "avg_rouge_l": 0.258,
+      "avg_hallucin": 0.181,
+      "avg_factuality": 0.648,
+      "avg_instruction_following": 0.879
+    },
+    "held_out": {
+      "label": "Base Student - Held Out Questions",
+      "avg_rouge_l": 0.392,
+      "avg_hallucin": 0.2,
+      "avg_factuality": 0.761,
+      "avg_instruction_following": 0.935
+    },
+    "consistency": {
+      "avg_consistency": 0.585
+    },
+    "multilingual": {
+      "avg_rouge_l": 0.244,
+      "avg_factuality": 0.458,
+      "avg_hallucination": 0.06
+    }
+  },
+  "lora_sft": {
+    "train": {
+      "label": "LoRA SFT - Training Questions",
+      "avg_rouge_l": 0.384,
+      "avg_hallucin": 0.131,
+      "avg_factuality": 0.584,
+      "avg_instruction_following": 0.851
+    },
+    "held_out": {
+      "label": "LoRA SFT - Held Out Questions",
+      "avg_rouge_l": 0.444,
+      "avg_hallucin": 0.15,
+      "avg_factuality": 0.722,
+      "avg_instruction_following": 0.881
+    },
+    "consistency": {
+      "avg_consistency": 0.312
+    },
+    "multilingual": {
+      "avg_rouge_l": 0.1,
+      "avg_factuality": 0.2,
+      "avg_hallucination": 0.065
+    }
+  },
+  "direct_sft": {
+    "train": {
+      "label": "Direct SFT - Training Questions",
+      "avg_rouge_l": 0.379,
+      "avg_hallucin": 0.205,
+      "avg_factuality": 0.69,
+      "avg_instruction_following": 0.863
+    },
+    "held_out": {
+      "label": "Direct SFT - Held Out Questions",
+      "avg_rouge_l": 0.371,
+      "avg_hallucin": 0.155,
+      "avg_factuality": 0.556,
+      "avg_instruction_following": 0.733
+    }
+  },
+  "response_distillation": {
+    "train": {
+      "label": "Response Distillation - Training Questions",
+      "avg_rouge_l": 0.28,
+      "avg_hallucin": 0.175,
+      "avg_factuality": 0.744,
+      "avg_instruction_following": 0.941
+    },
+    "held_out": {
+      "label": "Response Distillation - Held Out Questions",
+      "avg_rouge_l": 0.35,
+      "avg_hallucin": 0.223,
+      "avg_factuality": 0.865,
+      "avg_instruction_following": 0.962
+    },
+    "consistency": {
+      "avg_consistency": 0.344
+    },
+    "multilingual": {
+      "avg_rouge_l": 0.018,
+      "avg_factuality": 0.2,
+      "avg_hallucination": 0.209
+    }
+  }
+}

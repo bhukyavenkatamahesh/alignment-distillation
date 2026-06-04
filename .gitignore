@@ -1,11 +1,21 @@
+# Python and IPython caches
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .DS_Store
-outputs/
+
+# Datasets and Local Outputs
 datasets/processed/
+outputs/
+teacher_responses/
+
+# Model Checkpoints and Weights
+lora_sft/
+response_distillation/
 *.pt
 *.bin
 *.safetensors
+
+# Tracking and Environments
 .env
 wandb/
